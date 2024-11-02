@@ -5,6 +5,11 @@
     "quran":"Quran",
     "ahadeth":"Ahadeth",
     "tasbeeh":"Tasbeeh",
-    "radio":"ٌRadio"
+    "radio":"ٌRadio",
+    "language":"Language",
+    "theme":"Theme",
+    "light":"Light",
+    "dark":"Dark",
+    "settings":"Settings"
 
 }

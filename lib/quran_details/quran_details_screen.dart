@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_c12_maadi/providers/SettingsProvider.dart';
 import 'package:islami_c12_maadi/quran_details/VerseWidget.dart';
+import 'package:provider/provider.dart';
 
 import '../style/AppStyle.dart';
 
@@ -16,10 +18,14 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   @override
   Widget build(BuildContext context){
     QuranDetailsArgs args = ModalRoute.of(context)?.settings.arguments as QuranDetailsArgs;
-    loadFile(args.index);
+    if(lines.isEmpty){
+      loadFile(args.index);
+    }
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(AppStyle.isDark
+          image: DecorationImage(image: AssetImage(
+              settingsProvider.themeMode == ThemeMode.dark
               ?"assets/images/home_dark_background.png"
               : "assets/images/background.png"),fit: BoxFit.fill)
       ),
