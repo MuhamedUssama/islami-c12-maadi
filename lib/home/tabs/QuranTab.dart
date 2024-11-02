@@ -34,6 +34,7 @@ class QuranTab extends StatelessWidget {
         Row(
           children: [
             Expanded(child: Text(AppLocalizations.of(context)!.suraName,
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
     )),
             Container(
